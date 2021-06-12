@@ -10,6 +10,7 @@
 #include "Launcher.h"
 #include "CrysisLibs.h"
 #include "CrashLogger.h"
+#include "CryMemoryManagerHook.h"
 #include "Error.h"
 
 #include "config.h"
@@ -32,6 +33,7 @@ void Launcher::setCmdLine(const char *cmdLine)
 void Launcher::run(const CrysisLibs & libs)
 {
 	CrashLogger::Init(m_params.logFileName);
+	CryMemoryManagerHook::Init(libs.getCrySystem());
 
 	IGameStartup::TEntryFunction entry = libs.getCryGame().getSymbol<IGameStartup::TEntryFunction>("CreateGameStartup");
 	if (!entry)

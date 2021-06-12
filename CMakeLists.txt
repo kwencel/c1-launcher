@@ -37,6 +37,8 @@ add_library(LauncherBase STATIC
   Code/Launcher/CPU.h
   Code/Launcher/CrashLogger.cpp
   Code/Launcher/CrashLogger.h
+  Code/Launcher/CryMemoryManagerHook.cpp
+  Code/Launcher/CryMemoryManagerHook.h
   Code/Launcher/CrysisLibs.cpp
   Code/Launcher/CrysisLibs.h
   Code/Launcher/DLL.cpp
